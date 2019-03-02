@@ -52,7 +52,7 @@ class CSI {
     this.renameRefSeq = renameRefSeqs
   }
 
-  static _findFirstData(data, virtualOffset) {
+  _findFirstData(data, virtualOffset) {
     const currentFdl = data.firstDataLine
     if (currentFdl) {
       data.firstDataLine =
@@ -215,7 +215,7 @@ class CSI {
     return data
   }
 
-  static parsePseudoBin(bytes, offset) {
+  parsePseudoBin(bytes, offset) {
     // const one = Long.fromBytesLE(bytes.slice(offset + 4, offset + 12), true)
     // const two = Long.fromBytesLE(bytes.slice(offset + 12, offset + 20), true)
     // const three = longToNumber(

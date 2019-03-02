@@ -321,7 +321,7 @@ class BamFile {
     return this.readBamFeatures(data, chunk.minv.dataPosition)
   }
 
-  static readBamFeatures(ba, blockStart) {
+  readBamFeatures(ba, blockStart) {
     const sink = []
 
     while (blockStart < ba.length) {

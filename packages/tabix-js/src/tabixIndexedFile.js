@@ -315,7 +315,7 @@ class TabixIndexedFile {
     return { startCoordinate, overlaps: true }
   }
 
-  static _getVcfEnd(startCoordinate, refSeq, info) {
+  _getVcfEnd(startCoordinate, refSeq, info) {
     let endCoordinate = startCoordinate + refSeq.length
     if (info[0] !== '.') {
       let prevChar = ';'
@@ -341,7 +341,7 @@ class TabixIndexedFile {
     return this.index.lineCount(refSeq)
   }
 
-  static _cacheWith(cache, cacheKey, fillCallback) {
+  _cacheWith(cache, cacheKey, fillCallback) {
     const cachedPromise = cache.get(cacheKey)
     if (cachedPromise) return cachedPromise
 

@@ -61,7 +61,7 @@ class FakeRecord extends Record {
     return this.tlen
   }
 
-  static _next_refid() {
+  _next_refid() {
     return 1
   }
 }

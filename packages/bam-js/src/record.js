@@ -119,7 +119,7 @@ class BamRecord {
     return tags
   }
 
-  static parent() {
+  parent() {
     return undefined
   }
 
@@ -316,7 +316,7 @@ class BamRecord {
     this._parseTag()
   }
 
-  static _parseCigar(cigar) {
+  _parseCigar(cigar) {
     return cigar
       .match(/\d+\D/g)
       .map(op => [op.match(/\D/)[0].toUpperCase(), parseInt(op, 10)])
@@ -409,7 +409,7 @@ class BamRecord {
     return cigar
   }
 
-  static _flags() {}
+  _flags() {}
 
   length_on_ref() {
     this._get('cigar') // the length_on_ref is set as a

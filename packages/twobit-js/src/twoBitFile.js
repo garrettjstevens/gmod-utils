@@ -356,12 +356,7 @@ class TwoBitFile {
     return sequenceBases
   }
 
-  static _getOverlappingBlocks(
-    regionStart,
-    regionEnd,
-    blockStarts,
-    blockSizes,
-  ) {
+  _getOverlappingBlocks(regionStart, regionEnd, blockStarts, blockSizes) {
     // find the start and end indexes of the blocks that match
     let startIndex
     let endIndex
