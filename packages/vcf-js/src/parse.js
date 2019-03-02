@@ -123,7 +123,7 @@ class VCF {
    *
    * @returns {object} An object containing the key-value pairs
    */
-  _parseKeyValue(str, pairSeparator = ';') {
+  static _parseKeyValue(str, pairSeparator = ';') {
     const data = {}
     let currKey = ''
     let currValue = ''
@@ -170,7 +170,7 @@ class VCF {
    *
    * @returns {string} A string with any percent-encoded characters decoded
    */
-  _percentDecode(str) {
+  static _percentDecode(str) {
     const decodeTable = {
       '%3A': ':',
       '%3B': ';',

@@ -15,7 +15,7 @@ class BAI {
     this.renameRefSeq = renameRefSeqs
   }
 
-  _findFirstData(data, virtualOffset) {
+  static _findFirstData(data, virtualOffset) {
     const currentFdl = data.firstDataLine
     if (currentFdl) {
       data.firstDataLine =
@@ -25,7 +25,7 @@ class BAI {
     }
   }
 
-  parsePseudoBin(bytes, offset) {
+  static parsePseudoBin(bytes, offset) {
     const lineCount = longToNumber(
       Long.fromBytesLE(bytes.slice(offset + 20, offset + 28), true),
     )
@@ -187,7 +187,7 @@ class BAI {
    * calculate the list of bins that may overlap with region [beg,end) (zero-based half-open)
    * @returns {Array[number]}
    */
-  reg2bins(beg, end) {
+  static reg2bins(beg, end) {
     const list = [0]
     end -= 1
     for (let k = 1 + (beg >> 26); k <= 1 + (end >> 26); k += 1) list.push(k)

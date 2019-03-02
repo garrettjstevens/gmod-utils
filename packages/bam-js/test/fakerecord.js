@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import Record from '../src/record'
 
 class FakeRecord extends Record {
@@ -60,7 +61,7 @@ class FakeRecord extends Record {
     return this.tlen
   }
 
-  _next_refid() {
+  static _next_refid() {
     return 1
   }
 }

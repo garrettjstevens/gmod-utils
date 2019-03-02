@@ -161,7 +161,7 @@ class TabixIndex {
     return data
   }
 
-  parsePseudoBin(bytes, offset) {
+  static parsePseudoBin(bytes, offset) {
     // const one = Long.fromBytesLE(bytes.slice(offset + 4, offset + 12), true)
     // const two = Long.fromBytesLE(bytes.slice(offset + 12, offset + 20), true)
     const lineCount = longToNumber(

@@ -26,7 +26,7 @@ class CSI {
     this.renameRefSeq = renameRefSeqs
   }
 
-  _findFirstData(data, virtualOffset) {
+  static _findFirstData(data, virtualOffset) {
     const currentFdl = data.firstDataLine
     if (currentFdl) {
       data.firstDataLine =
@@ -41,7 +41,7 @@ class CSI {
     if (!indexData) return -1
     const idx = indexData.indices[refId]
     if (!idx) return -1
-    const stats = indexData.indices[refId].stats
+    const { stats } = indexData.indices[refId]
     if (stats) return stats.lineCount
     return -1
   }
@@ -159,7 +159,7 @@ class CSI {
     return data
   }
 
-  parsePseudoBin(bytes, offset) {
+  static parsePseudoBin(bytes, offset) {
     // const one = Long.fromBytesLE(bytes.slice(offset + 4, offset + 12), true)
     // const two = Long.fromBytesLE(bytes.slice(offset + 12, offset + 20), true)
     // const three = longToNumber(

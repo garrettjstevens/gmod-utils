@@ -15,6 +15,15 @@
     "__webpack_require__": true
   },
   "rules": {
+    "no-await-in-loop": "warn",
+    "no-bitwise": "off",
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
+    "no-underscore-dangle": "off",
     "prettier/prettier": [
       "error",
       {

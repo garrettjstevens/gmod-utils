@@ -212,11 +212,11 @@ class BamFile {
     if (opts.viewAsPairs) {
       const readNames = {}
       const readIds = {}
-      for (let i = 0; i < ret.length; i++) {
+      for (let i = 0; i < ret.length; i += 1) {
         const name = ret[i].name()
         const id = ret[i].id()
         if (!readNames[name]) readNames[name] = 0
-        readNames[name]++
+        readNames[name] += 1
         readIds[id] = 1
       }
       const unmatedPairs = {}
@@ -225,7 +225,7 @@ class BamFile {
       })
 
       const matePromises = []
-      for (let i = 0; i < ret.length; i++) {
+      for (let i = 0; i < ret.length; i += 1) {
         const name = ret[i].name()
         if (
           unmatedPairs[name] &&
@@ -243,7 +243,7 @@ class BamFile {
       }
       const mateBlocks = await Promise.all(matePromises)
       let mateChunks = []
-      for (let i = 0; i < mateBlocks.length; i++) {
+      for (let i = 0; i < mateBlocks.length; i += 1) {
         mateChunks.push(...mateBlocks[i])
       }
       // filter out duplicate chunks (the blocks are lists of chunks, blocks are concatenated, then filter dup chunks)
@@ -321,7 +321,7 @@ class BamFile {
     return this.readBamFeatures(data, chunk.minv.dataPosition)
   }
 
-  readBamFeatures(ba, blockStart) {
+  static readBamFeatures(ba, blockStart) {
     const sink = []
 
     while (blockStart < ba.length) {
