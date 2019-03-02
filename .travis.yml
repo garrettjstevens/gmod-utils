@@ -2,8 +2,9 @@ language: node_js
 node_js:
   - v6
 script:
-  - npm run lint
-  - npm test -- --coverage
+  - yarn lint
+  - yarn build
+  - yarn test-coverage
 cache:
   - yarn
 after_success:
