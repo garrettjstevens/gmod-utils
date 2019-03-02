@@ -1,0 +1,14 @@
+module.exports = api => {
+  api.cache.never()
+  return {
+    presets: [
+      [
+        '@babel/preset-env',
+        { targets: { browsers: ['last 2 versions', '> 0.5%'], node: '6.10' } },
+      ],
+    ],
+    retainLines: true,
+    sourceMaps: true,
+    plugins: [['@babel/plugin-transform-runtime', { corejs: 2 }]],
+  }
+}
