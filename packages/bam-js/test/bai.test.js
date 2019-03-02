@@ -152,7 +152,9 @@ describe('BAM with test_deletion_2_0.snps.bwa_align.sorted.grouped.bam', () => {
   let b
   beforeEach(async () => {
     b = new BAM({
-      bamPath: 'test/data/test_deletion_2_0.snps.bwa_align.sorted.grouped.bam',
+      bamPath: require.resolve(
+        './data/test_deletion_2_0.snps.bwa_align.sorted.grouped.bam',
+      ),
     })
     await b.getHeader()
   })
@@ -175,7 +177,7 @@ describe('BAM with test_deletion_2_0.snps.bwa_align.sorted.grouped.bam', () => {
 describe('BAM tiny', () => {
   it('loads some data', async () => {
     const b = new BAM({
-      bamPath: 'test/data/tiny.bam',
+      bamPath: require.resolve('./data/tiny.bam'),
     })
     await b.getHeader()
     const features = await b.getRecordsForRange('22', 30000000, 30010000)
@@ -186,7 +188,7 @@ describe('BAM tiny', () => {
 describe('BAM secondary', () => {
   it('checks secondary', async () => {
     const b = new BAM({
-      bamPath: 'test/data/secondary.bam',
+      bamPath: require.resolve('./data/secondary.bam'),
     })
     await b.getHeader()
     const features = await b.getRecordsForRange('20', 10761157, 10761387)
@@ -197,7 +199,7 @@ describe('BAM secondary', () => {
 describe('BAM empty', () => {
   it('loads but does not crash', async () => {
     const b = new BAM({
-      bamPath: 'test/data/empty.bam',
+      bamPath: require.resolve('./data/empty.bam'),
     })
     await b.getHeader()
     const features = await b.getRecordsForRange('22', 30000000, 30010000)
@@ -208,7 +210,7 @@ describe('BAM empty', () => {
 describe('BAM with B tags', () => {
   it('test B tags', async () => {
     const b = new BAM({
-      bamPath: 'test/data/Btag.bam',
+      bamPath: require.resolve('./data/Btag.bam'),
     })
     await b.getHeader()
 
@@ -228,7 +230,7 @@ describe('BAM with B tags', () => {
 describe('BAM with paired ends', () => {
   it('paired ends', async () => {
     const b = new BAM({
-      bamPath: 'test/data/paired.bam',
+      bamPath: require.resolve('./data/paired.bam'),
     })
     await b.getHeader()
 
@@ -239,10 +241,10 @@ describe('BAM with paired ends', () => {
   })
   it('read as pairs', async () => {
     const b = new BAM({
-      bamPath: 'test/data/paired.bam',
+      bamPath: require.resolve('./data/paired.bam'),
     })
     const p = new BAM({
-      bamPath: 'test/data/paired-region.bam',
+      bamPath: require.resolve('./data/paired-region.bam'),
     })
 
     await b.getHeader()
@@ -265,8 +267,8 @@ describe('BAM with paired ends', () => {
 describe('BAM+CSI with large coordinates', () => {
   it('use csi', async () => {
     const b = new BAM({
-      bamPath: 'test/data/large_coords.bam',
-      csiPath: 'test/data/large_coords.bam.csi',
+      bamPath: require.resolve('./data/large_coords.bam'),
+      csiPath: require.resolve('./data/large_coords.bam.csi'),
     })
     await b.getHeader()
 
@@ -311,8 +313,8 @@ describe('Pair orientations', () => {
 describe('SAM spec pdf', () => {
   it('check parse', async () => {
     const b = new BAM({
-      bamPath: 'test/data/samspec.bam',
-      baiPath: 'test/data/samspec.bam.bai',
+      bamPath: require.resolve('./data/samspec.bam'),
+      baiPath: require.resolve('./data/samspec.bam.bai'),
     })
     await b.getHeader()
 
@@ -325,7 +327,7 @@ describe('SAM spec pdf', () => {
 describe('trigger range out of bounds file', () => {
   it('range error', async () => {
     const b = new BAM({
-      bamPath: 'test/data/cho.bam',
+      bamPath: require.resolve('./data/cho.bam'),
     })
     await b.getHeader()
     // console.log(JSON.stringify(h))
