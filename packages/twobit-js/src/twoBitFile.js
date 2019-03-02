@@ -80,6 +80,7 @@ class TwoBitFile {
    * @private
    * detects the file's endianness and instantiates our binary parsers accordingly
    */
+  /* istanbul ignore next */
   async _getParsers() {
     await this._detectEndianness()
 
