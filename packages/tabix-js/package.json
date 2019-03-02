@@ -41,30 +41,12 @@
     "genomics"
   ],
   "dependencies": {
+    "@babel/runtime": "^7.3.4",
     "@babel/runtime-corejs2": "^7.3.1",
     "es6-promisify": "^6.0.1",
     "long": "^4.0.0",
     "pako": "1.0.9",
     "quick-lru": "^2.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.3",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-flow": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "documentation": "^9.1.1",
-    "eslint": "^5.12.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "jest": "^24.1.0",
-    "npm-watch": "^0.5.0",
-    "prettier": "^1.11.1",
-    "rimraf": "^2.6.2"
   },
   "publishConfig": {
     "access": "public"
