@@ -3,7 +3,6 @@ Bioinformatics file parsers and other utilities
 
 [![Build Status](https://img.shields.io/travis/com/garrettjstevens/gmod-utils/master.svg?logo=travis&style=flat-square)](https://travis-ci.com/garrettjstevens/gmod-utils)
 [![Coverage Status](https://img.shields.io/codecov/c/github/garrettjstevens/gmod-utils/master.svg?logo=codecov&style=flat-square)](https://codecov.io/gh/garrettjstevens/gmod-utils/branch/master)
-[![NPM version](https://img.shields.io/npm/v/@gmod/vcf.svg?logo=npm&style=flat-square)](https://npmjs.org/package/@gmod/cram)
 
 ## About
 
